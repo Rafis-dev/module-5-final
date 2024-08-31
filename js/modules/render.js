@@ -29,6 +29,7 @@ const renderTasks = (tbody, tasks) => {
     }
   });
 
+
   return rows;
 };
 
