@@ -51,7 +51,7 @@ const createRow = item => {
 
   row.innerHTML = `
   <td class="task-number">${item.taskNum}</td>
-            <td class="task" id="${item.id}" style="max-width: 520px; overflow: auto">
+            <td class="task" id="${item.id}" style="max-width: 520px; overflow: auto;">
               ${item.text}
             </td>
             <td class="status">В процессе</td>
