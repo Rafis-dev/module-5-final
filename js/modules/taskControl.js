@@ -19,6 +19,7 @@ const taskDone = (tableRow, rowTask) => {
   rowTask.classList.add('text-decoration-line-through');
   tableRow.querySelector('.btn-info').setAttribute('disabled', '');
   tableRow.querySelector('.status').textContent = 'Выполнена';
+  tableRow.querySelector('.btn-success').textContent = 'Возобновить';
 };
 // состояние для невыполненной задачи
 const taskNotDone = (tableRow, rowTask) => {
@@ -26,6 +27,7 @@ const taskNotDone = (tableRow, rowTask) => {
   rowTask.classList.remove('text-decoration-line-through');
   tableRow.querySelector('.btn-info').removeAttribute('disabled');
   tableRow.querySelector('.status').textContent = 'В процессе';
+  tableRow.querySelector('.btn-success').textContent = 'Завершить';
 };
 
 // функция для завершения редактирования задачи
@@ -41,6 +43,8 @@ const finishEdit = (arr, taskId, rowTask, askName, tableRow) => {
   rowTask.removeAttribute('contenteditable');
   rowTask.style.color = 'unset';
   tableRow.querySelector('.btn-success').removeAttribute('disabled');
+  tableRow.querySelector('.bi-pencil').style.display = 'block';
+  tableRow.querySelector('.bi-floppy').style.display = 'none';
 };
 
 export default {

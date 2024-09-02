@@ -1,9 +1,9 @@
 import elements from './createElements.js';
-const {createHeading, createForm, createTable, createRow} = elements;
+const {createHeading, createForm, createTable, createRow, createUser} = elements;
 
 // создаем основные элементы приложения
-const renderApp = (appContainer) => {
-  appContainer.append(createHeading('Todo App'), createForm(), createTable());
+const renderApp = (appContainer, name) => {
+  appContainer.append(createHeading('Todo App'), createUser(name), createForm(), createTable());
 };
 
 // отображаем задания

@@ -25,7 +25,8 @@ const start = () => {
     return start();
   }
   // основные элементы таблицы
-  renderApp(appContainer);
+  renderApp(appContainer, askName);
+
   let arr = JSON.parse(localStorage.getItem(askName)) || [];
   const form = document.querySelector('.form');
   const formInput = document.querySelector('.form-control');
@@ -90,6 +91,8 @@ const start = () => {
         tableRow.querySelector('.btn-success').setAttribute('disabled', '');
         rowTask.focus();
         rowTask.style.color = 'red';
+        tableRow.querySelector('.bi-pencil').style.display = 'none';
+        tableRow.querySelector('.bi-floppy').style.display = 'block';
 
         // Добавляем обработчик для завершения редактирования по Enter
         rowTask.addEventListener('keydown', (e) => {
