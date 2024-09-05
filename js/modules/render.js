@@ -21,11 +21,13 @@ const renderTasks = (tbody, tasks) => {
       tableRow.querySelector('.task').classList.add('text-decoration-line-through');
       tableRow.querySelector('.status').textContent = 'Выполнена';
       tableRow.querySelector('.btn-info').setAttribute('disabled', '');
+      tableRow.querySelector('.btn-success').textContent = 'Возобновить';
     } else {
       tableRow.classList.add('table-light');
       tableRow.querySelector('.task').classList.remove('text-decoration-line-through');
       tableRow.querySelector('.status').textContent = 'В процессе';
       tableRow.querySelector('.btn-info').removeAttribute('disabled');
+      tableRow.querySelector('.btn-success').textContent = 'Завершить';
     }
   });
 
